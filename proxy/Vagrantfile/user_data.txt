@@ -1,0 +1,10 @@
+#cloud-config
+
+write_files:
+ - path: /etc/sudoers.d/888-vagrant-cloud-init-requiretty
+   permissions: '0600'
+   owner: root
+   content: |
+      Defaults:root !requiretty
+      Defaults:ec2-user !requiretty
+
